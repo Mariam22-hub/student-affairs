@@ -1,0 +1,61 @@
+{% extends "navbar.html" %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  
+  <head>
+    <meta charset="utf-8">
+    <title>Active Students</title>
+    <link rel="stylesheet" href="{% static '/css/tablepage.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+    
+  </head>
+  <body>
+    <div class="fullcontainer">
+      <h1 id="AllActiveStudents">All Active Students</h1>
+
+      <br>
+      <div class="ssbar">
+        <form action="" class="searchbar">
+          {{myFilter.form}}
+  
+          <button type="submit" id="srch">Search</button>
+        </form>
+      </div>
+
+      <table class="content-table">
+        <thead>
+          <tr id="tableHead">
+            <th>ID</th>
+            <th>Student name</th>
+            <th>Level</th>
+            <th>Department</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            
+            {% for i in studs %}
+                <tr>
+                    <td>{{i.st_id}}</td>
+                    <td>{{i.st_name}}</td>
+                    <td>{{i.st_level}}</td>
+                    <td>{{i.department.dep_name}}</td>
+                    <td>{{i.st_active}}</td>
+                    
+                </tr>
+            {% endfor %}
+            
+          
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
+
+
+{% endblock %}

@@ -1,0 +1,23 @@
+from django.shortcuts import render, redirect 
+from django.http import HttpResponse
+from django.forms import inlineformset_factory
+from .models import * 
+from .forms import UpdateStudentForm
+
+def students(request):
+    studs = Student.objects.all()
+    return render (request, 'table&update/tables.html', {'studs' : studs })
+
+
+def getStudent(request, pk):
+    studs = Student.objects.get(id = pk)
+    context = {'studs' : studs}
+
+    return render(request, 'table&update/update.html', context)
+
+def updateStudent(request):
+    form = UpdateStudentForm()
+    context = {'form' : form}
+    return render(request, 'table&update/update.html', context)
+
+

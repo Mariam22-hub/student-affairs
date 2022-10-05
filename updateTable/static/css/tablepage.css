@@ -1,0 +1,132 @@
+html, body{
+    height: 100%;
+    background-color: #BBE1FA;
+    color: #1B262C;
+  }
+  
+  body{
+    margin: 0;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  *{
+    font-family: arial;
+  }
+  
+  #AllStudents {
+    font-size: 60px;
+    text-align: center;
+  }
+  .content-table button {
+    cursor: pointer;
+  }
+  #new{
+    margin-top: 0px;
+  }
+
+  .btn-group {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    align-items: left;
+
+  }
+
+
+  .btn-group button {
+    color: #ffffff;
+    background-color: #3282B8;
+    border: 1px solid #1B262C;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    float: left;
+    height: 45px;
+    width: 30%;
+    margin-bottom: 20px;
+  }
+  
+  .btn-group button:hover {
+    background-color: #358dc7;
+    border: 1px solid #222f37;
+  }
+
+
+  .sp {
+    height: 20px;
+  }
+
+  
+  .ssbar button {
+    color: #ffffff;
+    background-color: #3282B8;
+    border: 1px solid #1B262C;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: 12px;
+  }
+  
+  .ssbar button:hover {
+    background-color: #358dc7;
+    border: 1px solid #222f37;
+  }
+
+  .fullcontainer {
+    padding: 20px 40px;
+  }
+  .content-table{
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table {
+    color: #1B262C;
+  }
+  
+  th {
+    height: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    padding-inline-end: 25px;
+    text-align: center;
+    padding-right: 8px;
+    border-bottom: 1px solid #3282B8;
+  }
+
+  
+  .tablebtn button {
+    color: #ffffff;
+    background-color: #3282B8;
+    border: 1px solid #1B262C;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: 12px;
+  }
+  
+  .tablebtn button:hover {
+    background-color: #358dc7;
+    border: 1px solid #222f37;
+  }
+  
+  td{
+    padding: 10px;
+    text-align: center;
+  }
+
+  tr:nth-child(even) {background-color: #9dd8ff;}
+  tr:hover {background-color: #6dc5ff}
+  

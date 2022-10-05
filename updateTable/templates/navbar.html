@@ -1,0 +1,28 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/nav.css' %}">
+<!DOCTYPE html>
+<html>
+    
+    <nav class="navbar">
+        <div class="brand-title">FCAI</div>
+        <a href="{% url 'home' %}" class="toggle-button">
+            
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+        <ul>
+            <li><a href="{% url 'home' %}">Home page</a></li>
+            <li><a href="{% url 'data' %}">Students Data</a></li>
+            <li><a href="{% url 'activity' %}">Student Activity</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+        </ul>
+        </div>
+    </nav>
+    <head>
+    </head>
+</html>
+
+{% block content %}{% endblock content %}

@@ -1,0 +1,107 @@
+{% extends "navbar.html" %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Students table</title>
+    <link rel="stylesheet" href="{% static '/css/tablepage.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+    <!-- <script language="JavaScript" src="javascript/StudentsTable.js"></script> -->
+    
+  </head>
+  <body>
+    <div class="fullcontainer">
+      <h1 id="AllStudents">All Students</h1>
+
+      <div class="btn-group">
+        <div class="nw">
+          <a href="{% url 'add' %}">
+            <button id="new">Add New Student</button>
+          </a>
+        </div>
+      </div>
+      <br>
+      <div class="sp"></div>
+
+      <div class="ssbar">
+        <form action="" class="searchbar">
+          {{myFilter.form}}
+  
+          <button type="submit" id="srch">Search</button>
+        </form>
+      </div>
+
+      <table class="content-table">
+        <thead>
+          <tr id="tableHead">
+            <th>ID</th>
+            <th>Student name</th>
+            <th>GPA</th>
+            <th>Birth date</th>
+            <th>Gender</th>
+            {% comment %} <th>Status</th> {% endcomment %}
+            <th>Level</th>
+            <th>Department</th>
+            <th>Email</th>
+            <th>Phone no</th>
+            <th>Update</th>
+            <th>Delete</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+            
+            {% for i in studs %}
+                <tr>
+                    <td>{{i.st_id}}</td>
+                    <td>{{i.st_name}}</td>
+                    <td>{{i.st_gpa}}</td>
+                    <td>{{i.st_birthdate}}</td>
+                    <td>{{i.st_gender}}</td>
+                    {% comment %} <td>{{i.st_active}}</td> {% endcomment %}
+                    <td>{{i.st_level}}</td>
+                    <td>{{i.department.dep_name}}</td>
+                    <td>{{i.st_email}}</td>
+                    <td>{{i.st_phone}}</td>
+
+                    <td>
+                      <div class="tablebtn">
+                        <a href="{% url 'update' i.id %}">
+                          <button id="edit">Update</button>
+                        </a>
+                      </div>
+                    </td>
+
+                    <td>
+                      <div class="tablebtn">
+                        <form action="{% url 'delete' i.id %}" 
+                          method="post" style="display: inline;" onsubmit="window.mytest()">
+                          {% csrf_token %}
+                          <input type="hidden" name="id" 
+                              value="{{ i.id }}" />
+                          <button type="submit" id="delete">Delete
+                              <span class="glyphicon glyphicon-trash"></span>
+                          </button>
+                        </form> 
+                        <script type="text/javascript">window.mytest = function() { var isValid = confirm('Are you sure ?');if (!isValid) { event.preventDefault();}}</script>
+
+
+                      </div>
+                    </td>
+                    
+                </tr>
+            {% endfor %}
+            
+          
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,75 @@
+{% extends "navbar.html" %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/Home.css' %}">
+<body>
+        <body style="background-color: #BBE1FA">
+     </p>
+    </p>
+      </div>
+
+</head>
+<body>
+ 
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <p id="rcorners1"><img src="{% static '/images/cairoo.jpg'%}" style="width:100%"></p>
+  
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <p id="rcorners1"><img src="{% static '/images/cairo uni.jpg'%}" style="width:100%"></p>
+  
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <p id="rcorners1"> <img src="{% static '/images/cairo.jpg'%}" style="width:100%"></p>
+  
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+<hr>
+<script src="{% static '/js/HOMEPAGE.js' %}"></script>
+
+<div class="rightcolumn">
+  <div class="card">
+    <h2>About US</h2>
+    
+    <p>Faculty of Computers and Artifcial Intelligence , Cairo Universty ,located  in   Ahmed Zewail, الدقي, الجيزة 12311 · ~8</p>
+       
+  </div>
+ </div>
+
+    <hr>
+     
+    <div class="footer">
+      <b> CONTACT US  THROUGH:</b> <br>
+      EMAIL:developer@gmail.com<br>
+      PHONE:746543552<br>
+      WEBSITE:www.developweb.com <br>
+    </div>
+  
+</p>
+</body>
+
+</html> 
+
+{% endblock %}

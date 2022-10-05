@@ -1,0 +1,39 @@
+{% extends "navbar.html" %}
+{% load static %}
+{% block content %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>HomePage</title>
+    <link rel="stylesheet" href="{% static '/css/Home1_Style.css' %}">
+</head>
+
+<body>
+    <div class="div1" >
+     <div class="d_n">
+        <a href=""><img class="img2" src="{% static '/images/image1.jpeg'%}" height="230px" width="230px" ></a>
+        <a href=""><h2 class="SiteName">Human Resources</h2></a>
+    </div>
+    <div class="d_n">
+            <a href="{% url 'home' %}"><img class="img2" src="{% static '/images/image2.png'%}" height="230x" width="230px"></a>
+            <a href="{% url 'home' %}"><h2 class="SiteName">Student Affairs</h2></a>
+     </div>
+     <div class="d_n">
+         <a href="">
+         <img class="img2" src="{% static '/images/image3.jpeg'%}" height="230x" width="230px"></a>
+         <h2 class="SiteName">Higher Studies</h2>
+     </div>
+     <div class="d_n">
+         <a href="">
+            
+         <img class="img2" src="{%static '/images/image4.jpeg'%}" height="230x" width="230px"></a>
+         <h2 class="SiteName">Laboratory tracking</h2>
+     </div>
+     </div>
+</body>
+</html>
+
+{% endblock %}
